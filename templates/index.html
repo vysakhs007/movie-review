@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>Quick Movie Reviews</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/narrow-jumbotron/narrow-jumbotron.css" />
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+      <header class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+           <li class="nav-item">
+              <a class="nav-link" href="/movies">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Quick Movie Reviews</h3>
+      </header>
+      <main role="main">
+      
+      <div class="alert alert-success">
+  {{ message }}
+</div>
+
+        <div class="jumbotron">
+          <h1 class="display-3">Quick Movie Reviews</h1>
+          <p class="lead">Write quick reviews of movies you watch and read others reviews real quick.</p>
+          
+          <p><a class="btn btn-lg btn-success" href="signup" role="button">Create Account</a>
+          
+          <a class="btn btn-lg btn-success" href="login" role="button">Login</a>
+          
+          </p>
+        </div>
+
+        <div class="row marketing">
+        <h3 style="background:#007bff; width:100%; color:#fff; padding:15px;">Latest Movies</h3>
+          <div style="width:100%">
+          {% for movie in movies %}
+            <a href='/movies/{{movie.id }}'><h4>{{ movie.name }}</h4></a>
+            <p>Directed By : {{ movie.directed_by }}</p>
+            <p>Released On : {{ movie.released_date }}</p>
+            <hr />
+            {% endfor %}
+         </div>
+         
+
+        </div>
+
+      </main>
+
+      <footer class="footer">
+        <p>&copy; Film Mortuary 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+</body>
+
+</html>

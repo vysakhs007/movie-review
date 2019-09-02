@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+{%import "bootstrap/wtf.html" as wtf %}
+
+<title>Quick Movie Reviews</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/narrow-jumbotron/narrow-jumbotron.css" />
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+      <header class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/movies">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Profile</a>
+            </li>
+
+          </ul>
+        </nav>
+        <h3 class="text-muted">Quick Movie Reviews</h3>
+      </header>
+      <main role="main">
+
+        <div class="jumbotron">
+        <p style="background:#dc3545; color:#fff; padding:8px; font-size=25px;">Your reviews can't be edited. It will be available to all users once you post it.</p>
+          <h1 class="display-3">{{ movies.name }}</h1>
+         <form class="form-signin" method="post" action="addreview">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.title) }}
+        {{ wtf.form_field(form.desc) }}
+        <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="submit0">Post Your Review</button>
+      </form>
+         </div>
+        </main>
+        
+          <footer class="footer">
+        <p>&copy; Film Mortuary 2017</p>
+      </footer>
+     
+     </div>
+</body>
+</html>
