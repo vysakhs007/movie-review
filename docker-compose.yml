@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  dev_db:
+    image: postgres:11.4-alpine
+    environment:
+      POSTGRES_DB: movie-reviews-db
+      POSTGRES_USER: movie_reviews_dev
+      POSTGRES_PASSWORD: pwd
+    ports:
+      - "7001:5432"
+ 
