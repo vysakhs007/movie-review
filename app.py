@@ -18,7 +18,7 @@ from datetime import datetime
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Thisissupposedtobesecret!'
 db = SQLAlchemy(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@localhost/QuickMovieReviews'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://movie_reviews_dev:pwd@localhost:7001/movie-reviews-db'
 Bootstrap(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
